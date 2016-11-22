@@ -1,3 +1,7 @@
 <div class="text-center"> <h1> <%= @bike.gender %> <%= @bike.category %> bike </h1> </div>
 
 <%= link_to "Rent this bike", new_bike_booking_path(@bike) %>
+
+<% if @bike.photo? %>
+  <%= cl_image_tag @bike.photo.path, width: 200, height: 300, crop: :fill %>
+<% end %>
