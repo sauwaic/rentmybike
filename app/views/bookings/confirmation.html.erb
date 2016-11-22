@@ -1,0 +1,12 @@
+<div class="text-center">
+  <h1>Booking confirmation</h1>
+  <h3>Congratulations! Your booking has been confirmed! </h3>
+  <h1>Details:</h1>
+  <h2>Date: <%= @booking.start_date %> to <%= @booking.end_date %> </h2>
+  <h2>Bike: <%= "#{@booking.bike.gender} #{@booking.bike.category}" %> bike </h2>
+
+<%= link_to "My bookings", my_bookings_path %>
+<%= link_to "Browse other bikes", bikes_path %>
+
+</div>
+

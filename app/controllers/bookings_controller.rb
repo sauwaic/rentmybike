@@ -1,7 +1,7 @@
 class BookingsController < ApplicationController
 
-before_action :set_booking, only: [ :show, :edit, :update, :destroy ]
-before_action :set_bike, only: [ :new, :create ]
+before_action :set_booking, only: [ :show, :edit, :update, :destroy, :confirmation ]
+before_action :set_bike, only: [ :new, :create, :confirmation ]
 
 
   def index
@@ -20,11 +20,10 @@ before_action :set_bike, only: [ :new, :create ]
     booking.bike = @bike
     booking.user = current_user
     booking.save
-    redirect_to bike_bookings_path(@bike)
+    redirect_to bike_booking_confirmation_path(@bike, booking)
   end
 
   def edit
-
   end
 
   def update
@@ -36,6 +35,10 @@ before_action :set_bike, only: [ :new, :create ]
     @booking.destroy
     redirect_to bookings_path
   end
+
+  def confirmation
+  end
+
 
   private
 

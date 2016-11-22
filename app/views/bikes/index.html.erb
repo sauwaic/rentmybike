@@ -1,7 +1,20 @@
-<div class="text-center">Browse bikes</div>
+<div class="text-center">
+<h1>Browse bikes</h1>
+</div>
 
-<ul>
-<% @bikes.each do |bike| %>
-<li> <%= link_to "#{bike.category}", bike_path(bike) %> </li>
-<% end %>
-</ul>
+<div class="container">
+  <div class="row">
+    <% @bikes.each do |bike| %>
+    <div class="col-xs-12 col-sm-4">
+      <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= get_bike_picture(bike) %>'); background-position: center">
+        <div class="card-category"> <%= bike.price %> </div>
+        <div class="card-description">
+          <h2> <%= "#{bike.gender} #{bike.category} bike" %> </h2>
+          <img class="card-user avatar" src="user.jpg">
+          <%= link_to "", bike_path(bike), class: "card-link" %>
+        </div>
+      </div>
+    </div>
+    <% end %>
+  </div>
+</div>

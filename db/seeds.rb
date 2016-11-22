@@ -19,7 +19,6 @@ end
 User.destroy_all
 Bike.destroy_all
 
-
 5.times do
   user = User.create(
     first_name: Faker::Name.first_name,

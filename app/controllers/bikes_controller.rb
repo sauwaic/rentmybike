@@ -1,5 +1,6 @@
 class BikesController < ApplicationController
 
+  skip_before_action :authenticate_user!, only: [ :index, :show ]
   before_action :set_bike, only: [ :show, :edit, :update, :destroy ]
 
   def index
@@ -41,7 +42,7 @@ class BikesController < ApplicationController
   end
 
   def bike_parameters
-    params.require(:bike).permit(:size, :gender, :category, :gears, :picture_url, :condition, :price, :photo)
+    params.require(:bike).permit(:size, :gender, :category, :gears, :condition, :price, :photo)
   end
 
 end
