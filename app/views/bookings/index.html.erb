@@ -1,0 +1,7 @@
+<div class="text-center"><h1>Your booked next rides:</h1></div>
+
+<ul>
+<% @bookings.each do |booking| %>
+<li> <%= link_to "#{booking.bike.gender} #{booking.bike.category} bike", bike_booking_path(booking.bike, booking) %> </li>
+<% end %>
+</ul>
