@@ -24,7 +24,6 @@ bike1_attributes = {
   gender: "female",
   category: "racing",
   gears: 3,
-  picture_url: "www.lalala.com",
   condition: "good",
   price: 100
 }
@@ -34,7 +33,6 @@ bike2_attributes = {
   gender: "male",
   category: "racing",
   gears: 3,
-  picture_url: "www.pqoweiw.com",
   condition: "good",
   price: 200
 }

@@ -1,0 +1,9 @@
+<div class="text-center">
+  <h1>My bookings:</h1>
+  <ul class="list-unstyled">
+  <% @bookings.each do |booking| %>
+    <li> <%= link_to "#{booking.start_date} - #{booking.end_date} : #{booking.bike.gender} #{booking.bike.category} bike", bike_booking_path(booking, booking.bike) %>
+    </li>
+    <% end %>
+  </ul>
+</div>

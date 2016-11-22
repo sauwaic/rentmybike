@@ -8,6 +8,8 @@ Rails.application.routes.draw do
     resources :bike_accessories, only: [ :create ]
   end
 
+  get '/bikes/:bike_id/bookings/:id/confirmation', to: 'bookings#confirmation', as: 'bike_booking_confirmation'
+
   get '/my_profile', to: 'dashboards#my_profile'
   get '/my_bookings', to: 'dashboards#my_bookings'
   get '/my_bikes', to: 'dashboards#my_bikes'
