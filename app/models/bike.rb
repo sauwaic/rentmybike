@@ -1,4 +1,7 @@
 class Bike < ApplicationRecord
+
+  has_attachment :photo
+
   belongs_to :user
   has_many :bike_accessories, dependent: :destroy
   has_many :accessories, through: :bike_accessories

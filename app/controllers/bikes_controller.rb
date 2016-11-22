@@ -17,7 +17,7 @@ class BikesController < ApplicationController
     bike = Bike.new(bike_parameters)
     bike.user = current_user
     bike.save
-    redirect_to bikes_path
+    redirect_to bike_path(bike)
   end
 
   def edit
@@ -41,7 +41,7 @@ class BikesController < ApplicationController
   end
 
   def bike_parameters
-    params.require(:bike).permit(:size, :gender, :category, :gears, :picture_url, :condition, :price)
+    params.require(:bike).permit(:size, :gender, :category, :gears, :picture_url, :condition, :price, :photo)
   end
 
 end
