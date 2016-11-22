@@ -1,0 +1,7 @@
+<div class="text-center">Browse bikes</div>
+
+<ul>
+<% @bikes.each do |bike| %>
+<li> <%= link_to "#{bike.category}", bike_path(bike) %> </li>
+<% end %>
+</ul>
