@@ -9,6 +9,7 @@ gem 'devise'
 gem 'redis'
 gem 'figaro'
 gem 'cloudinary', '1.1.0'
+gem 'faker'
 
 gem "attachinary", github: "assembler/attachinary"
 gem "jquery-fileupload-rails"

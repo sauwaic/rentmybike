@@ -12,7 +12,6 @@ class Bike < ApplicationRecord
   validates :gender, inclusion: { in: %w(male female) }
   validates :category, inclusion: { in: %w(racing mountain city fixie) }
   validates :gears, inclusion: { in: [0, 3, 7, 14, 21] }
-  validates :picture_url, presence: true
   validates :condition, inclusion: { in: %w(excellent good fair) }
   validates :price, presence: true
 
