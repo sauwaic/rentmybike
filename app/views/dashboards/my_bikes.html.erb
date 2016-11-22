@@ -1,0 +1,7 @@
+<div class="text-center"><h1>My bikes:</h1></div>
+
+<ul>
+<% @bikes.each do |bike| %>
+<li> <%= link_to "#{bike.gender} #{bike.category} bike", bike_path(bike) %> </li>
+<% end %>
+</ul>
