@@ -6,7 +6,6 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-
 # TODO: Please first create two Users via browser
 
 # Creating list of accessories
@@ -17,31 +16,30 @@ Accessory.destroy_all
 end
 
 #Creating bikes
+User.destroy_all
 Bike.destroy_all
 
-bike1_attributes = {
-  size: "small",
-  gender: "female",
-  category: "racing",
-  gears: 3,
-  picture_url: "www.lalala.com",
-  condition: "good",
-  price: 100
-}
 
-bike2_attributes = {
-  size: "large",
-  gender: "male",
-  category: "racing",
-  gears: 3,
-  picture_url: "www.pqoweiw.com",
-  condition: "good",
-  price: 200
-}
+5.times do
+  user = User.create(
+    first_name: Faker::Name.first_name,
+    last_name: Faker::Name.last_name,
+    username: Faker::Internet.user_name,
+    phone_number: Faker::PhoneNumber.phone_number,
+    address: Faker::Address.city,
+    email: Faker::Internet.email,
+    password: "123456"
+    )
 
-User.first.bikes.build(bike1_attributes).save
-User.last.bikes.build(bike2_attributes).save
+  bike_attributes = {
+    size: ["large", "small", "medium"].sample,
+    gender: ["male", "female"].sample,
+    category:  ["racing", "mountain", "city", "fixie"].sample,
+    gears:  [0, 3, 7, 14, 21].sample,
+    condition:  ["excellent", "good", "fair"].sample,
+    price: [25, 45, 99, 65, 100, 700, 225].sample
+  }
 
-#Associating accessories with bikes
-BikeAccessory.create(bike_id: 1, accessory_id: 25)
-BikeAccessory.create(bike_id: 1, accessory_id: 26)
+  user.bikes.build(bike_attributes).save
+end
+
