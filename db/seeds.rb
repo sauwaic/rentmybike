@@ -9,6 +9,8 @@
 # TODO: Please first create two Users via browser
 
 # Creating list of accessories
+
+BikeAccessory.destroy_all
 Accessory.destroy_all
 
 %w(front-light back-light basket trolley back-seat lock).each do |accessory|
