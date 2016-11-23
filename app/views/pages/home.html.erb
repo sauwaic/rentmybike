@@ -1,2 +1,8 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div class="banner" style="background: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('<%= image_path 'mybike.jpg' %>');">
+  <div class="banner-content">
+    <h1>Rent your bike now !!!</h1>
+    <p>No need to buy a bike, you can rent one easily with "RentmyBike"</p>
+    <%= link_to "Select your Bike", bikes_path, {class: "btn btn-primary"} %>
+    </a>
+  </div>
+</div>
