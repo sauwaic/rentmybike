@@ -1,20 +1,41 @@
 <div class="text-center">
-<h1>Browse bikes</h1>
+  <h1>Browse bikes</h1>
 </div>
+
+
 
 <div class="container">
   <div class="row">
-    <% @bikes.each do |bike| %>
-    <div class="col-xs-12 col-sm-4">
+
+
+  <div class="col-xs-6 col-sm-6">
+      <% @bikes.each do |bike| %>
+
       <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= get_bike_picture(bike) %>'); background-position: center">
-        <div class="card-category"> <%= bike.price %> </div>
+        <div class="card-category"> <%= bike.price %>  </div>
         <div class="card-description">
           <h2> <%= "#{bike.gender} #{bike.category} bike" %> </h2>
           <img class="card-user avatar" src="user.jpg">
           <%= link_to "", bike_path(bike), class: "card-link" %>
         </div>
       </div>
+      <% end %>
     </div>
-    <% end %>
+
+
+    <div class = "col-xs-6 col-sm-6" style = "background-color: #dedef8;
+    box-shadow: inset 1px -1px 1px #444, inset -1px 1px 1px #444;">
+
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+      eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+      enim ad minim veniam, quis nostrud exercitation ullamco laboris
+      nisi ut aliquip ex ea commodo consequat.</p>
+
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+        eiusmod tempor incididunt ut.</p>
+      </div>
+
+
+
+    </div>
   </div>
-</div>
