@@ -1,0 +1,39 @@
+.confirmation-card {
+  border-radius: 10px;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+
+  height: 480px;
+  width: 500px;
+
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+}
+
+.confirmation-green {
+  background-color: #758E4F;
+  height: 300px;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+
+  padding: 0 25px ;
+
+  color: #E8E8E8;
+}
+
+.confirmation-bottom {
+  position: absolute;
+  bottom: 5px;
+  padding: 0 25px;
+  color: #5B5B5B;
+  width: 100%;
+
+  h4 {
+    line-height: 18px;
+  }
+}
