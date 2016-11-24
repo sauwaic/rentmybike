@@ -6,6 +6,10 @@
   background-size: cover !important;
   background-position: 50%;
   box-shadow: 3px 3px 3px 0px #212121;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding-top: 200px;
 }
 
 .banner h1 {
@@ -14,19 +18,10 @@
   text-shadow: 0px 1px rgba(0, 0, 0, 0.2);
 }
 
-.banner-content {
-  margin-top: 280px;
-}
-
 .banner-title {
   color: black;
   font-size: 60px;
   font-weight: normal;
-  text-shadow:
-  -0.2px -0.2px 0 lightgrey,
-  0.2px -0.2px 0 lightgrey,
-  -0.2px 0.2px 0 lightgrey,
-  0.2px 0.2px 0 lightgrey;
 }
 
 .position-on-bike {
@@ -52,7 +47,7 @@
   letter-spacing: 3px;
   color: rgba(#57D6BF, 1);
   margin-bottom: 20px;
-   text-shadow:
+  text-shadow:
   -0.5px -0.5px 0 black,
   0.5px -0.5px 0 black,
   -0.5px 0.5px 0 black,
