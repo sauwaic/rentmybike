@@ -6,7 +6,7 @@
 <div class="bike-banner" style="background-image: url( <%= image_path 'default-bike.png' %>);">
 
  <div class="banner-content">
-  <%= button_to "Rent this bike", new_bike_booking_path(@bike), class:"btn btn-primary btn-lg position-on-bike" %>
+  <%= link_to "Rent this bike", new_bike_booking_path(@bike), class:"btn btn-primary btn-lg position-on-bike" %>
   <br>
   <div class="banner-paragraph">
     <p><%= "Bike Size = #{@bike.size} Gender = #{@bike.gender} Category = #{@bike.category} Gears = #{@bike.gears} Condition = #{@bike.condition} Price = #{@bike.price}" %></p>
