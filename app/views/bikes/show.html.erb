@@ -6,3 +6,11 @@
   <%= cl_image_tag @bike.photo.path, width: 200, height: 300, crop: :fill %>
 <% end %>
 
+<% content_for(:after_js) do %>
+  <%= javascript_tag do %>
+    $(document).ready(function() {
+      var coord = { lat: <%= @bike_coordinates[:lat] %>, lng: <%= @bike_coordinates[:lng] %>};
+      alert('bike coordinates are ' + coord.lat + ', ' + coord.lng);
+    });
+  <% end %>
+<% end %>
