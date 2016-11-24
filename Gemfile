@@ -10,7 +10,13 @@ gem 'redis'
 gem 'figaro'
 gem 'cloudinary', '1.1.0'
 gem 'faker'
+gem "coffee-rails"
+gem "gmaps4rails"
 gem 'geocoder'
+
+source 'https://rails-assets.org' do
+  gem "rails-assets-underscore"
+end
 
 gem "attachinary", github: "assembler/attachinary"
 gem "jquery-fileupload-rails"
