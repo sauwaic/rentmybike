@@ -26,20 +26,39 @@
         </div>
         <% end %>
       </div>
+
     </div>
+
     <div class = "col-xs-5" style = "background-color: #dedef8;
     box-shadow: inset 1px -1px 1px #444, inset -1px 1px 1px #444;">
 
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-      eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-      enim ad minim veniam, quis nostrud exercitation ullamco laboris
-      nisi ut aliquip ex ea commodo consequat.</p>
+    <div id="map" style="width: 100%; height: 100vh; position: static"></div>
 
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-        eiusmod tempor incididunt ut.</p>
-      </div>
+    <% content_for(:after_js) do %>
+    <%= javascript_tag do %>
+    $(document).ready(function() {
+    var handler = Gmaps.build('Google');
+    var styles = <%= render 'mapstyle'%>;
+    handler.buildMap({
+      provider: {
+      styles: styles
+      },
+     internal: { id: 'map' } }, function() {
+    markers = handler.addMarkers(<%= raw @hash.to_json %>);
+    handler.bounds.extendWith(markers);
+    handler.fitMapToBounds();
+    if (markers.length == 0) {
+    handler.getMap().setZoom(2);
+  } else if (markers.length == 1) {
+  handler.getMap().setZoom(14);
+}
+});
+});
+<% end %>
+<% end %>
+</div>
 
-    </div>
-  </div>
+</div>
 
 
+</div>

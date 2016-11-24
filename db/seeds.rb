@@ -38,7 +38,7 @@ Bike.destroy_all
     category:  ["racing", "mountain", "city", "fixie"].sample,
     gears:  [0, 3, 7, 14, 21].sample,
     condition:  ["excellent", "good", "fair"].sample,
-    price: [25, 45, 99, 65, 100, 700, 225].sample
+    price: [25, 45, 99, 65, 100, 700, 225].sample,
   }
 
   user.bikes.build(bike_attributes).save

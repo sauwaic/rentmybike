@@ -1,6 +1,9 @@
 
+
 <div class="bike-banner" style="background-image: url( <%= image_path get_bike_banner(@bike) %>);">
  <h1 class="text-left"> <span class="banner-title"> <%= @bike.gender %> <%= @bike.category %> bike </span> </h1>
+
+
  <div class="banner-content">
   <%= link_to "Rent this bike", new_bike_booking_path(@bike), class:"btn btn-primary btn-lg position-on-bike" %>
   <br>
@@ -24,4 +27,14 @@
     <p><%= "Email: #{@bike.user.email}" %></p>
   </div>
 </div>
+
+
+<% content_for(:after_js) do %>
+  <%= javascript_tag do %>
+    $(document).ready(function() {
+      var coord = { lat: <%= @bike.latitude %>, lng: <%= @bike.longitude %>};
+      alert('bike coordinates are ' + coord.lat + ', ' + coord.lng);
+    });
+  <% end %>
+<% end %>
 
