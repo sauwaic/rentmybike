@@ -1,6 +1,42 @@
-<div class="text-center">
-  <h1> <%= "Hello, #{current_user.first_name}" %></h1>
 
-<h3> <%= link_to "My bikes", my_bikes_path %> </h3>
-<h3> <%= link_to "My bookings", my_bookings_path %> </h3>
+
+
+<div class="wrapper-title" id="wrapper-title-profile">
+<div class="profile-header text-center">
+    <% avatar_url = current_user.facebook_picture_url || "http://placehold.it/30x30" %>
+    <%= image_tag avatar_url, class: "avatar-large" %>
+    <div class="title-black-box">
+
+      <h1> <%= "Hello, #{current_user.first_name}" %> </h1>
+    </div>
+  </div>
 </div>
+
+<div class="text-center">
+  <h4>Where would you like to ride to?</h4>
+  <br>
+  <br>
+</div>
+
+<div class="container">
+
+  <div class="row">
+    <div class="col-xs-12 col-sm-8 col-sm-offset-2">
+      <div class="row">
+        <div class="col-xs-12 col-sm-6">
+          <div class="text-center">
+            <%= link_to (image_tag 'my-bikes.png', class: "item-card"), my_bikes_path  %>
+          </div>
+        </div>
+        <div class="col-xs-12 col-sm-6 ">
+          <div class="text-center">
+
+            <%= link_to (image_tag 'my-bookings.png', class: "item-card"), my_bookings_path  %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
