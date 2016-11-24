@@ -1,20 +1,45 @@
-<div class="text-center">
-<h1>Browse bikes</h1>
+<div class="wrapper-title">
+  <div class="title-black-box">
+    <h1>Pick your bike</h1>
+  </div>
 </div>
+
 
 <div class="container">
   <div class="row">
-    <% @bikes.each do |bike| %>
-    <div class="col-xs-12 col-sm-4">
-      <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= get_bike_picture(bike) %>'); background-position: center">
-        <div class="card-category"> <%= bike.price %> </div>
-        <div class="card-description">
-          <h2> <%= "#{bike.gender} #{bike.category} bike" %> </h2>
-          <img class="card-user avatar" src="user.jpg">
-          <%= link_to "", bike_path(bike), class: "card-link" %>
+    <div class="col-xs-7">
+      <div class="row">
+
+        <% @bikes.each do |bike| %>
+        <div class="col-xs-12 col-sm-6">
+
+          <div class="card">
+            <%= image_tag get_bike_picture(bike), class: "card-image" %>
+            <div class="card-price"> <%= "$ #{bike.price}" %>  </div>
+            <hr>
+            <div class="card-description">
+              <h2> <%= "#{bike.gender.capitalize} #{bike.category} bike" %> </h2>
+              <img class="card-user avatar" src="">
+            </div>
+            <%= link_to "", bike_path(bike), class: "card-link" %>
+          </div>
         </div>
+        <% end %>
       </div>
     </div>
-    <% end %>
+    <div class = "col-xs-5" style = "background-color: #dedef8;
+    box-shadow: inset 1px -1px 1px #444, inset -1px 1px 1px #444;">
+
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+      eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+      enim ad minim veniam, quis nostrud exercitation ullamco laboris
+      nisi ut aliquip ex ea commodo consequat.</p>
+
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+        eiusmod tempor incididunt ut.</p>
+      </div>
+
+    </div>
   </div>
-</div>
+
+
