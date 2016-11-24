@@ -5,6 +5,7 @@
     <%= f.input :gears, collection: ["0", "3", "7", "14", "21"], :prompt => "Select a Number of Gears" %>
     <%= f.input :condition, collection: ["excellent", "good", "fair"], :prompt => "Select the Condition of the Bike" %>
     <%= f.input :price, placeholder: "100$" %>
+    <%= f.input :address %>
     <%= f.input :photo, as: :attachinary %>
     <%= f.button :submit, class: "btn btn-primary"  %>
 <% end %>

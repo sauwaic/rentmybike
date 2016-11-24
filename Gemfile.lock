@@ -254,10 +254,7 @@ DEPENDENCIES
   figaro
   font-awesome-sass
   geocoder
-<<<<<<< HEAD
   gmaps4rails
-=======
->>>>>>> master
   jbuilder (~> 2.0)
   jquery-fileupload-rails
   jquery-rails

@@ -13,8 +13,8 @@ class BikesController < ApplicationController
   end
 
   def show
-    @bike = bike.find(params[:id])
-    @alert_message = "You are viewing #{@bike.name}"
+    @bike = Bike.find(params[:id])
+    @alert_message = "You are viewing #{@bike.gender}"
   end
 
   def new
@@ -65,8 +65,8 @@ class BikesController < ApplicationController
     @bike = Bike.find(params[:id])
   end
 
-  def bike_parameters
-    params.require(:bike).permit(:size, :gender, :category, :gears, :condition, :price, :photo)
+  def bike_params
+    params.require(:bike).permit(:size, :gender, :category, :gears, :condition, :price, :address, :photo)
   end
 
 end
