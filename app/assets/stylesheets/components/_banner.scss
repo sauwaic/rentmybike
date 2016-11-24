@@ -1,0 +1,55 @@
+.bike-banner {
+  color: white;
+  text-align: center;
+  height: 70vh;
+  /* if you have a 70px navbar => height: calc(100vh - 30px); */
+  background-size: cover !important;
+  background-position: 50%;
+  box-shadow: 3px 3px 3px 0px #212121;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding-top: 200px;
+}
+
+.banner h1 {
+  font-size: 50px;
+  font-weight: bold;
+  text-shadow: 0px 1px rgba(0, 0, 0, 0.2);
+}
+
+.banner-title {
+  color: black;
+  font-size: 60px;
+  font-weight: normal;
+}
+
+.position-on-bike {
+  color: #C1C8CB;
+  background-color: #33658A;
+  border-color: #33658A;
+  background-opacity: 60%;
+  border-radius: 10px;
+  box-shadow: 0px 0px px 0px #212121;
+}
+
+.position-on-bike:hover {
+  color: white;
+  background-color: #468CC3;
+  border-color: #468CC3;
+  border-radius: 10px;
+}
+
+.banner-paragraph {
+  font-size: 25px;
+  border-color: black;
+  font-weight: normal;
+  letter-spacing: 3px;
+  color: rgba(#57D6BF, 1);
+  margin-bottom: 20px;
+  text-shadow:
+  -0.5px -0.5px 0 black,
+  0.5px -0.5px 0 black,
+  -0.5px 0.5px 0 black,
+  0.5px 0.5px 0 black;
+}

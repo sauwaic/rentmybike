@@ -1,7 +1,30 @@
-<div class="text-center"><h1>My bikes:</h1></div>
+<div class="wrapper-title">
+  <div class="title-black-box">
+    <h1>My bikes</h1>
+  </div>
+</div>
 
-<ul>
-<% @bikes.each do |bike| %>
-<li> <%= link_to "#{bike.gender} #{bike.category} bike", bike_path(bike) %> </li>
-<% end %>
-</ul>
+<div class="container">
+  <div class="row">
+    <% @bikes.each do |bike| %>
+    <div class="col-xs-12 col-sm-6 col-md-4">
+      <div class="card">
+        <%= image_tag get_bike_picture(bike), class: "card-image" %>
+        <div class="card-description">
+          <h2> <%= "#{bike.gender.capitalize} #{bike.category} bike" %> </h2>
+          <img class="card-user avatar" src="">
+        </div>
+        <%= link_to "", bike_path(bike), class: "card-link" %>
+      </div>
+    </div>
+    <% end %>
+  </div>
+
+  <div class="row">
+    <div class="col-xs-12">
+      <%= link_to "Add a bike", new_bike_path, class: "btn btn-primary btn-go" %>
+    </div>
+  </div>
+</div>
+
+

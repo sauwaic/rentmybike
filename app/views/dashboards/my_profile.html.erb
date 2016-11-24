@@ -1,5 +1,5 @@
 <div class="text-center">
-  <h1> <%= current_user.username %></h1>
+  <h1> <%= "Hello, #{current_user.first_name}" %></h1>
 
 <h3> <%= link_to "My bikes", my_bikes_path %> </h3>
 <h3> <%= link_to "My bookings", my_bookings_path %> </h3>

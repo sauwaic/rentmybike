@@ -18,10 +18,34 @@
           <h2> <%= "#{bike.gender} #{bike.category} bike" %> </h2>
           <img class="card-user avatar" src="user.jpg">
           <%= link_to "", bike_path(bike), class: "card-link" %>
-        </div>
-      </div>
-      <% end %>
+
+<div class="wrapper-title">
+  <div class="title-black-box">
+    <h1>Pick your bike</h1>
+  </div>
+</div>
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-xs-7">
+      <div class="row">
+
+        <% @bikes.each do |bike| %>
+        <div class="col-xs-12 col-sm-6">
+
+          <div class="card">
+            <%= image_tag get_bike_picture(bike), class: "card-image" %>
+            <div class="card-price"> <%= "$ #{bike.price}" %>  </div>
+            <hr>
+            <div class="card-description">
+              <h2> <%= "#{bike.gender.capitalize} #{bike.category} bike" %> </h2>
+              <img class="card-user avatar" src="">
+            </div>
+            <%= link_to "", bike_path(bike), class: "card-link" %>
+          </div>
     </div>
+      <% end %>
 
 
     <div class = "col-xs-6 col-sm-6" style = "background-color: #dedef8;
@@ -53,5 +77,8 @@
     </div>
   </div>
 </div>
+
+    </div>
+  </div>
 
 

@@ -2,6 +2,9 @@
   <h1> <%= @booking.bike.gender %> <%= @booking.bike.category %> bike </h1>
   <h2> <%= @booking.start_date %> to <%= @booking.end_date %> </h2>
 
+
+
+ <%= link_to "Delete booking", bike_booking_path(@booking.bike, @booking), method: :delete, class: "btn btn-primary btn-go" %>
 </div>
 
 

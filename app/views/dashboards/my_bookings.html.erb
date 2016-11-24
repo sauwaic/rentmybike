@@ -1,9 +1,32 @@
-<div class="text-center">
-  <h1>My bookings:</h1>
+<div class="wrapper-title">
+  <div class="title-black-box">
+    <h1>My bookings:</h1>
+  </div>
+</div>
+
+<!--
   <ul class="list-unstyled">
   <% @bookings.each do |booking| %>
-    <li> <%= link_to "#{booking.start_date} - #{booking.end_date} : #{booking.bike.gender} #{booking.bike.category} bike", bike_booking_path(booking, booking.bike) %>
+    <li> <%= link_to "#{booking.start_date} - #{booking.end_date} : #{booking.bike.gender} #{booking.bike.category} bike", bike_booking_path(booking.bike, booking) %>
     </li>
     <% end %>
   </ul>
+-->
+
+<div class="container">
+  <div class="row">
+    <% @bookings.each do |booking| %>
+    <div class="col-xs-12 col-sm-6 col-md-4">
+      <div class="card">
+        <%= image_tag get_bike_picture(booking.bike), class: "card-image" %>
+        <div class="card-description">
+        <h2> <%= "#{booking.start_date} - #{booking.end_date}" %> </h2>
+          <p> <%= "#{booking.bike.gender.capitalize} #{booking.bike.category} bike" %> </p>
+          <img class="card-user avatar" src="">
+        </div>
+        <%= link_to "", bike_booking_path(booking.bike, booking), class: "card-link" %>
+      </div>
+    </div>
+    <% end %>
+  </div>
 </div>
