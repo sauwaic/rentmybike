@@ -33,7 +33,7 @@ before_action :set_bike, only: [ :new, :create, :confirmation ]
 
   def destroy
     @booking.destroy
-    redirect_to bookings_path
+    redirect_to my_bookings_path
   end
 
   def confirmation
