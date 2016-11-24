@@ -1,8 +1,10 @@
+ <h1 class="text-center"> <span class="banner-title"> <%= @bike.gender %> <%= @bike.category %> bike </span> </h1>
+
 <% if @bike.photo? %>
 <%= cl_image_tag @bike.photo.path, width: 200, height: 300, crop: :fill %>
 <% else %>
 <div class="bike-banner" style="background-image: url( <%= image_path 'default-bike.png' %>);">
- <h1 class="text-left"> <span class="banner-title"> <%= @bike.gender %> <%= @bike.category %> bike </span> </h1>
+
  <div class="banner-content">
   <%= button_to "Rent this bike", new_bike_booking_path(@bike), class:"btn btn-primary btn-lg position-on-bike" %>
   <br>
