@@ -17,5 +17,6 @@ class Bike < ApplicationRecord
   validates :gears, inclusion: { in: [0, 3, 7, 14, 21] }
   validates :condition, inclusion: { in: %w(excellent good fair) }
   validates :price, presence: true
+  validates :user_id, presence: true
 
 end
