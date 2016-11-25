@@ -1,6 +1,6 @@
 class Bike < ApplicationRecord
 
-  geocoded_by :address
+  geocoded_by :address, :latitude  => :lat, :longitude => :lon
   after_validation :geocode, if: :address_changed?
   after_create :geocode
 
