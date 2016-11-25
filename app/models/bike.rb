@@ -2,6 +2,7 @@ class Bike < ApplicationRecord
 
   geocoded_by :address
   after_validation :geocode, if: :address_changed?
+  after_create :geocode
 
   has_attachment :photo
 
@@ -18,5 +19,6 @@ class Bike < ApplicationRecord
   validates :condition, inclusion: { in: %w(excellent good fair) }
   validates :price, presence: true
   validates :user_id, presence: true
+  validates :address, presence: true
 
 end
