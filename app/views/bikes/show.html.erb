@@ -1,7 +1,7 @@
  <h1 class="text-center"> <span class="banner-title"> <%= @bike.gender %> <%= @bike.category %> bike </span> </h1>
 
  <div class="bike-banner" style="background-image: url( <%= image_path get_bike_banner(@bike) %>);">
-   <div class="card-price-show"> $ 100  </div>
+   <div class="card-price-show"> <%= @bike.price %>  </div>
 
 
    <div class="banner-content">
@@ -20,7 +20,8 @@
 
 <div class="container">
   <div class="card-show text-center">
-    <%= image_tag 'avatar.jpg', class: "avatar-large" %>
+    <<% avatar_url = current_user.facebook_picture_url || "http://placehold.it/30x30" %>
+    <%= image_tag avatar_url, class: "avatar-large" %>
     <br>
     <br>
     <h1><%= "#{@bike.user.first_name} #{@bike.user.last_name}" %></h1>
