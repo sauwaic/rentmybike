@@ -1,16 +1,18 @@
+ <h1 class="text-center"> <span class="banner-title"> <%= @bike.gender %> <%= @bike.category %> bike </span> </h1>
+
+ <div class="bike-banner" style="background-image: url( <%= image_path get_bike_banner(@bike) %>);">
+   <div class="card-price-show"> $ 100  </div>
 
 
-<div class="bike-banner" style="background-image: url( <%= image_path get_bike_banner(@bike) %>);">
- <h1 class="text-left"> <span class="banner-title"> <%= @bike.gender %> <%= @bike.category %> bike </span> </h1>
-
-
- <div class="banner-content">
-  <%= link_to "Rent this bike", new_bike_booking_path(@bike), class:"btn btn-primary btn-lg position-on-bike" %>
-  <br>
-  <div class="banner-paragraph">
-    <p><%= "Bike Size = #{@bike.size} Gender = #{@bike.gender} Category = #{@bike.category} Gears = #{@bike.gears} Condition = #{@bike.condition} Price = #{@bike.price}" %></p>
+   <div class="banner-content">
+    <%= link_to "Rent this bike", new_bike_booking_path(@bike), class:"btn btn-primary btn-lg position-on-bike" %>
+    <br>
+    <div class="card-paragraph">
+      <div class="banner-paragraph">
+        <p><%= "Bike Size = #{@bike.size} Gender = #{@bike.gender} Category = #{@bike.category} Gears = #{@bike.gears} Condition = #{@bike.condition} Price = #{@bike.price}" %></p>
+      </div>
+    </div>
   </div>
-</div>
 </div>
 
 <br>
@@ -19,6 +21,8 @@
 <div class="container">
   <div class="card-show text-center">
     <%= image_tag 'avatar.jpg', class: "avatar-large" %>
+    <br>
+    <br>
     <h1><%= "#{@bike.user.first_name} #{@bike.user.last_name}" %></h1>
     <h2><%= "#{@bike.user.address}" %></h2>
     <h3><%= "#{@bike.user.rating}" %></h3>
@@ -27,14 +31,4 @@
     <p><%= "Email: #{@bike.user.email}" %></p>
   </div>
 </div>
-
-
-<% content_for(:after_js) do %>
-  <%= javascript_tag do %>
-    $(document).ready(function() {
-      var coord = { lat: <%= @bike.latitude %>, lng: <%= @bike.longitude %>};
-      alert('bike coordinates are ' + coord.lat + ', ' + coord.lng);
-    });
-  <% end %>
-<% end %>
 

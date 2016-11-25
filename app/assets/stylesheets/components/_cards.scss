@@ -14,7 +14,7 @@
   background-color: #57D6BF;
   color: white;
   position: relative;
-  padding: 10px;
+  padding: 15px;
 }
 
 .card-image {
@@ -89,4 +89,32 @@
 
 .card-link:hover{
   opacity: 0.1;
+}
+
+.card-price-show {
+  position: absolute;
+  height: 40px;
+  width: 90px;
+  background-color: #758E4F;
+  left: 0px;
+  top: 250px;
+  font-size: 25px;
+  text-transform: uppercase;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  text-align: center;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  border-radius: 0px 5px 5px 0px;
+}
+
+.card-paragraph {
+  text-shadow: 0 1px 3px rgba(0,0,0,0.6);
+  background-size: cover !important;
+  background-color: rgba(0,0,0,0.6);
+  color: white;
+  position: relative;
+  padding: 10px;
+  border-radius: 5px;
+  margin-top: 30px;
 }
