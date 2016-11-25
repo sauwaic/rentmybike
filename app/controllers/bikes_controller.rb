@@ -22,7 +22,7 @@ class BikesController < ApplicationController
   end
 
    def create
-    bike = Bike.new(bike_parameters)
+    bike = Bike.new(bike_params)
     bike.user = current_user
     bike.save
     redirect_to bike_path(bike)

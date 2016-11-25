@@ -41,15 +41,12 @@
 }
 
 .banner-paragraph {
-  font-size: 25px;
+  font-size: 20px;
   border-color: black;
   font-weight: normal;
   letter-spacing: 3px;
-  color: rgba(#57D6BF, 1);
-  margin-bottom: 20px;
-  text-shadow:
-  -0.5px -0.5px 0 black,
-  0.5px -0.5px 0 black,
-  -0.5px 0.5px 0 black,
-  0.5px 0.5px 0 black;
+  color: rgba(#C1C8CB, 1);
+  p {
+    margin-bottom: 0px;
+  }
 }
